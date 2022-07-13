@@ -1,5 +1,6 @@
-
-sudo apt-get install neovim
+sudo add-apt-repository ppa:neovim-ppa/unstable
+sudo apt-get update
+sudo apt-get instal:l neovim
 
 wget https://github.com/source-foundry/Hack/releases/download/v3.003/Hack-v3.003-ttf.zip
 unzip Hack-v3.003-ttf.zip
