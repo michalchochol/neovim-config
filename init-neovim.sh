@@ -1,6 +1,9 @@
-sudo add-apt-repository -y ppa:neovim-ppa/unstable
-sudo apt-get -y update
-sudo apt-get -y install neovim
+#sudo add-apt-repository -y ppa:neovim-ppa/unstable
+#sudo apt-get -y update
+#sudo apt-get -y install neovim
+
+wget https://github.com/neovim/neovim/releases/download/stable/nvim-linux64.deb
+sudo dpkg -i --force-overwrite ./nvim-linux64.deb
 
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Hack.zip
 rm -rf ~/.local/share/fonts/hack
