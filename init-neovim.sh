@@ -9,6 +9,10 @@ mkdir ~/.local/share/fonts
 mkdir ~/.local/share/fonts/hack
 unzip -d ~/.local/share/fonts/hack Hack.zip 
 
+wget https://github.com/jesseduffield/lazygit/releases/download/v0.34/lazygit_0.34_Linux_x86_64.tar.gz
+tar xf lazygit_0.34_Linux_x86_64.tar.gz
+sudo mv lazygit /usr/bin/
+
 mv ~/.config/nvim ~/.config/nvim.bak
 mv ~/.local/share/nvim/site ~/.local/share/nvim/site.bak
 
