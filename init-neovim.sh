@@ -13,6 +13,8 @@ wget https://github.com/jesseduffield/lazygit/releases/download/v0.34/lazygit_0.
 tar xf lazygit_0.34_Linux_x86_64.tar.gz
 sudo mv lazygit /usr/bin/
 
+curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/install_update_linux.sh | bash
+
 mv ~/.config/nvim ~/.config/nvim.bak
 mv ~/.local/share/nvim/site ~/.local/share/nvim/site.bak
 
