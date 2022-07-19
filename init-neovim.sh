@@ -1,6 +1,4 @@
-#sudo add-apt-repository -y ppa:neovim-ppa/unstable
-#sudo apt-get -y update
-#sudo apt-get -y install neovim
+sudo apt-get -y install ripgrep
 
 wget https://github.com/neovim/neovim/releases/download/stable/nvim-linux64.deb
 sudo dpkg -i --force-overwrite ./nvim-linux64.deb
