@@ -19,4 +19,5 @@ mv ~/.config/nvim ~/.config/nvim.bak
 mv ~/.local/share/nvim/site ~/.local/share/nvim/site.bak
 
 git clone https://github.com/AstroNvim/AstroNvim ~/.config/nvim
+cp -r user ~/.config/nvim/lua/
 nvim +PackerSync
