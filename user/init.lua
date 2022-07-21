@@ -94,7 +94,10 @@
       --     require("lsp_signature").setup()
       --   end,
       -- },
-      { "overcache/NeoSolarized" },
+      {"overcache/NeoSolarized" },
+      {"hashivim/vim-terraform"},
+      {"vim-syntastic/syntastic"},
+      {"juliosueiras/vim-terraform-completion"},
     },
     -- All other entries override the setup() call for default plugins
     ["null-ls"] = function(config)
