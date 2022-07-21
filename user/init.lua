@@ -18,7 +18,8 @@
   },
 
   -- Set colorscheme
-  colorscheme = "default_theme",
+  -- colorscheme = "default_theme",
+  colorscheme = "NeoSolarized",
 
   -- Override highlight groups in any theme
   highlights = {
@@ -93,6 +94,7 @@
       --     require("lsp_signature").setup()
       --   end,
       -- },
+      { "overcache/NeoSolarized" },
     },
     -- All other entries override the setup() call for default plugins
     ["null-ls"] = function(config)
