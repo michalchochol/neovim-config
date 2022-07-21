@@ -225,10 +225,10 @@
       ["<S-A-Right>"] = { "<cmd>BufferLineMoveNext<cr>", desc = "Move buffer tab right" },
       ["<S-A-Left>"] = { "<cmd>BufferLineMovePrev<cr>", desc = "Move buffer tab left" },
       -- Better window navigation
-      ["<C-Left>"] = { function() require("smart-splits").move_cursor_left() end, desc = "Move to left split" },
-      ["<C-Down>"] = { function() require("smart-splits").move_cursor_down() end, desc = "Move to below split" },
-      ["<C-Up>"] = { function() require("smart-splits").move_cursor_up() end, desc = "Move to above split" },
-      ["<C-Right>"] = { function() require("smart-splits").move_cursor_right() end, desc = "Move to right split" },
+      ["<C-S-Left>"] = { function() require("smart-splits").move_cursor_left() end, desc = "Move to left split" },
+      ["<C-S-Down>"] = { function() require("smart-splits").move_cursor_down() end, desc = "Move to below split" },
+      ["<C-S-Up>"] = { function() require("smart-splits").move_cursor_up() end, desc = "Move to above split" },
+      ["<C-S-Right>"] = { function() require("smart-splits").move_cursor_right() end, desc = "Move to right split" },
       -- Resize with arrows
       ["<S-Up>"] = { function() require("smart-splits").resize_up() end, desc = "Resize split up" },
       ["<S-Down>"] = { function() require("smart-splits").resize_down() end, desc = "Resize split down" },
