@@ -98,6 +98,10 @@
       {"hashivim/vim-terraform"},
       {"vim-syntastic/syntastic"},
       {"juliosueiras/vim-terraform-completion"},
+      {"fatih/vim-go"}, -- do: GoInstallBinaries
+      {"neoclide/coc.nvim"}, -- branch: release
+      {"mfussenegger/nvim-dap"},
+      {"ThePrimeagen/harpoon"}
     },
     -- All other entries override the setup() call for default plugins
     ["null-ls"] = function(config)
@@ -108,6 +112,7 @@
       config.sources = {
         -- Set a formatter
         null_ls.builtins.formatting.rufo,
+	null_ls.builtins.formatting.terraform_fmt,
         -- Set a linter
         null_ls.builtins.diagnostics.rubocop,
       }
