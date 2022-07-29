@@ -101,7 +101,8 @@
       {"fatih/vim-go"}, -- do: GoInstallBinaries
       {"neoclide/coc.nvim"}, -- branch: release
       {"mfussenegger/nvim-dap"},
-      {"ThePrimeagen/harpoon"}
+      {"ThePrimeagen/harpoon"},
+      -- {"whynothugo/lsp_lines.nvim"}
     },
     -- All other entries override the setup() call for default plugins
     ["null-ls"] = function(config)
