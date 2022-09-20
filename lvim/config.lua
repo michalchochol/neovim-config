@@ -33,11 +33,11 @@ lvim.keys.normal_mode["<S-A-Left>"] = "<cmd>BufferLineMovePrev<cr>" -- or vim.ke
 -- Better window navigation
 lvim.keys.normal_mode["|"] = ":vsplit<CR>"
 lvim.keys.normal_mode["-"] = ":split<CR>"
-lvim.keys.normal_mode["<S-Left>"] = { function() require("smart-splits").move_cursor_left() end } -- or vim.keymap.set("n", "<C-q>", ":q<cr>" )
--- lvim.keys.normal_mode     ["<S-Left>"] = { function() require("smart-splits").move_cursor_left() end, desc = "Move to left split" },
--- lvim.keys.normal_mode     ["<S-Down>"] = { function() require("smart-splits").move_cursor_down() end, desc = "Move to below split" },
--- lvim.keys.normal_mode      ["<S-Up>"] = { function() require("smart-splits").move_cursor_up() end, desc = "Move to above split" },
--- lvim.keys.normal_mode      ["<S-Right>"] = { function() require("smart-splits").move_cursor_right() end, desc = "Move to right split" },
+lvim.keys.normal_mode["<S-Left>"] = "<C-w>h"
+lvim.keys.normal_mode["<S-Right>"] = "<C-w>l"
+lvim.keys.normal_mode["<S-Up>"] = "<C-w>k"
+lvim.keys.normal_mode["<S-Down>"] = "<C-w>j"
+lvim.keys.normal_mode["<S-q>"] = "<cmd>:q<cr>"
 --       -- Resize with arrows
 -- lvim.keys.normal_mode      ["<C-Up>"] = { function() require("smart-splits").resize_up() end, desc = "Resize split up" },
 -- lvim.keys.normal_mode      ["<C-Down>"] = { function() require("smart-splits").resize_down() end, desc = "Resize split down" },
