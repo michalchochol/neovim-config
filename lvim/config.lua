@@ -19,31 +19,19 @@ lvim.colorscheme = "onedarker"
 lvim.leader = "space"
 -- add your own keymapping
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
--- lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
--- lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
--- unmap a default keymapping
--- vim.keymap.del("n", "<C-Up>")
--- override a default keymapping
--- lvim.keys.normal_mode["<C-q>"] = ":q<cr>" -- or vim.keymap.set("n", "<C-q>", ":q<cr>" )
 -- buffers
 lvim.keys.normal_mode["<A-Right>"] = "<cmd>BufferLineCycleNext<cr>" -- or vim.keymap.set("n", "<C-q>", ":q<cr>" )
 lvim.keys.normal_mode["<A-Left>"] = "<cmd>BufferLineCyclePrev<cr>" -- or vim.keymap.set("n", "<C-q>", ":q<cr>" )
 lvim.keys.normal_mode["<S-A-Right>"] = "<cmd>BufferLineMoveNext<cr>" -- or vim.keymap.set("n", "<C-q>", ":q<cr>" )
 lvim.keys.normal_mode["<S-A-Left>"] = "<cmd>BufferLineMovePrev<cr>" -- or vim.keymap.set("n", "<C-q>", ":q<cr>" )
 -- Better window navigation
-lvim.keys.normal_mode["|"] = ":vsplit<CR>"
-lvim.keys.normal_mode["-"] = ":split<CR>"
+lvim.keys.normal_mode["<S-v>"] = ":vsplit<CR>"
+lvim.keys.normal_mode["<S-h>"] = ":split<CR>"
 lvim.keys.normal_mode["<S-Left>"] = "<C-w>h"
 lvim.keys.normal_mode["<S-Right>"] = "<C-w>l"
 lvim.keys.normal_mode["<S-Up>"] = "<C-w>k"
 lvim.keys.normal_mode["<S-Down>"] = "<C-w>j"
 lvim.keys.normal_mode["<S-q>"] = "<cmd>:q<cr>"
---       -- Resize with arrows
--- lvim.keys.normal_mode      ["<C-Up>"] = { function() require("smart-splits").resize_up() end, desc = "Resize split up" },
--- lvim.keys.normal_mode      ["<C-Down>"] = { function() require("smart-splits").resize_down() end, desc = "Resize split down" },
--- lvim.keys.normal_mode      ["<C-Left>"] = { function() require("smart-splits").resize_left() end, desc = "Resize split left" },
--- lvim.keys.normal_mode      ["<C-Right>"] = { function() require("smart-splits").resize_right() end, desc = "Resize split right" }
-
 -- Change Telescope navigation to use j and k for navigation and n and p for history in both input and normal mode.
 -- we use protected-mode (pcall) just in case the plugin wasn't loaded yet.
 -- local _, actions = pcall(require, "telescope.actions")
@@ -136,7 +124,7 @@ lvim.builtin.treesitter.highlight.enabled = true
 -- -- you can set a custom on_attach function that will be used for all the language servers
 -- -- See <https://github.com/neovim/nvim-lspconfig#keybindings-and-completion>
 -- lvim.lsp.on_attach_callback = function(client, bufnr)
---   local function buf_set_option(https://www.lunarvim.org/configuration/02-keybindings.html#lunarvim-khttps://www.lunarvim.org/configuration/02-keybindings.html#lunarvim-keybindingseybindings...)
+--   local function buf_set_option(...)
 --     vim.api.nvim_buf_set_option(bufnr, ...)
 --   end
 --   --Enable completion triggered by <c-x><c-o>
@@ -144,20 +132,22 @@ lvim.builtin.treesitter.highlight.enabled = true
 -- end
 
 -- -- set a formatter, this will override the language server formatting capabilities (if it exists)
--- local formatters = require "lvim.lsp.null-ls.formatters"
--- formatters.setup {
---   { command = "black", filetypes = { "python" } },
---   { command = "isort", filetypes = { "python" } },
---   {
---     -- each formatter accepts a list of options identical to https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md#Configuration
---     command = "prettier",
---     ---@usage arguments to pass to the formatter
---     -- these cannot contain whitespaces, options such as `--line-width 80` become either `{'--line-width', '80'}` or `{'--line-width=80'}`
---     extra_args = { "--print-with", "100" },
---     ---@usage specify which filetypes to enable. By default a providers will attach to all the filetypes it supports.
---     filetypes = { "typescript", "typescriptreact" },
---   },
--- }
+local formatters = require "lvim.lsp.null-ls.formatters"
+formatters.setup {
+  { command = "black", filetypes = { "python" } },
+  { command = "uncrustify", filetypes = { "groovy" } },
+  -- { command = "npm-groovy-lint", filetypes = { "groovy" } },
+  --   { command = "isort", filetypes = { "python" } },
+  --   {
+  --     -- each fformatormatter accepts a list of options identical to https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md#Configuration
+  --     command = "prettier",
+  --     ---@usage arguments to pass to the formatter
+  --     -- these cannot contain whitespaces, options such as `--line-width 80` become either `{'--line-width', '80'}` or `{'--line-width=80'}`
+  --     extra_args = { "--print-with", "100" },
+  --     ---@usage specify which filetypes to enable. By default a providers will attach to all the filetypes it supports.
+  --     filetypes = { "typescript", "typescriptreact" },
+  --   },
+}
 
 -- -- set additional linters
 -- local linters = require "lvim.lsp.null-ls.linters"
@@ -179,11 +169,7 @@ lvim.builtin.treesitter.highlight.enabled = true
 
 -- Additional Plugins
 lvim.plugins = {
-  --     {"folke/tokyonight.nvim"},
-  --     {
-  --       "folke/trouble.nvim",
-  --       cmd = "TroubleToggle",
-  --     },
+  -- { "MichaHoffmann/tree-sitter-hcl" }
 }
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
