@@ -25,13 +25,21 @@ lvim.keys.normal_mode["<A-Left>"] = "<cmd>BufferLineCyclePrev<cr>" -- or vim.key
 lvim.keys.normal_mode["<S-A-Right>"] = "<cmd>BufferLineMoveNext<cr>" -- or vim.keymap.set("n", "<C-q>", ":q<cr>" )
 lvim.keys.normal_mode["<S-A-Left>"] = "<cmd>BufferLineMovePrev<cr>" -- or vim.keymap.set("n", "<C-q>", ":q<cr>" )
 -- Better window navigation
-lvim.keys.normal_mode["<S-v>"] = ":vsplit<CR>"
-lvim.keys.normal_mode["<S-h>"] = ":split<CR>"
+lvim.keys.normal_mode["<C-v>"] = ":vsplit<CR>"
+lvim.keys.normal_mode["<C-h>"] = ":split<CR>"
 lvim.keys.normal_mode["<S-Left>"] = "<C-w>h"
 lvim.keys.normal_mode["<S-Right>"] = "<C-w>l"
 lvim.keys.normal_mode["<S-Up>"] = "<C-w>k"
 lvim.keys.normal_mode["<S-Down>"] = "<C-w>j"
 lvim.keys.normal_mode["<S-q>"] = "<cmd>:q<cr>"
+-- terminal keymappings
+lvim.builtin.which_key.mappings["t"] = {
+  name = "+Terminal",
+  t = { "<cmd>ToggleTerm<cr>", "modal" },
+  h = { "<cmd>ToggleTerm direction=horizontal size=20<cr>", "horizontal" },
+  v = { "<cmd>ToggleTerm direction=vertical size=80<cr>", "vertical" },
+}
+
 -- Change Telescope navigation to use j and k for navigation and n and p for history in both input and normal mode.
 -- we use protected-mode (pcall) just in case the plugin wasn't loaded yet.
 -- local _, actions = pcall(require, "telescope.actions")
@@ -61,6 +69,9 @@ lvim.keys.normal_mode["<S-q>"] = "<cmd>:q<cr>"
 --   l = { "<cmd>Trouble loclist<cr>", "LocationList" },
 --   w = { "<cmd>Trouble workspace_diagnostics<cr>", "Workspace Diagnostics" },
 -- }
+
+
+
 
 -- TODO: User Config for predefined plugins
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
@@ -135,7 +146,9 @@ lvim.builtin.treesitter.highlight.enabled = true
 local formatters = require "lvim.lsp.null-ls.formatters"
 formatters.setup {
   { command = "black", filetypes = { "python" } },
-  { command = "uncrustify", filetypes = { "groovy" } },
+  { command = "shfmt", filetypes = { "sh" } },
+  { command = "clang-format", filetypes = { "java" } },
+  -- { command = "uncrustify", filetypes = { "groovy" } },
   -- { command = "npm-groovy-lint", filetypes = { "groovy" } },
   --   { command = "isort", filetypes = { "python" } },
   --   {
@@ -169,7 +182,10 @@ formatters.setup {
 
 -- Additional Plugins
 lvim.plugins = {
-  -- { "MichaHoffmann/tree-sitter-hcl" }
+  -- { "z0mbix/vim-shfmt" }
+  -- { "sbdchd/neoformat" },
+  -- { "akinsho/toggleterm.nvim" },
+
 }
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
