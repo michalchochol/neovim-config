@@ -12,6 +12,7 @@ an executable
 lvim.log.level = "warn"
 lvim.format_on_save = true
 lvim.colorscheme = "onedarker"
+-- lvim.builtin.dap.active = true
 -- lvim.transparent_window = true
 -- to disable icons and use a minimalist setup, uncomment the following
 -- lvim.use_icons = false
@@ -186,7 +187,7 @@ lvim.plugins = {
   -- { "z0mbix/vim-shfmt" }
   -- { "sbdchd/neoformat" },
   -- { "akinsho/toggleterm.nvim" },
-
+  { "ravenxrz/DAPInstall.nvim" },
 }
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
