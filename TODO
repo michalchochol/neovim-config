@@ -1,2 +1,5 @@
+inspiration config: https://github.com/abzcoding/lvim
+
+
 1. move plugins to  lua/user/plugins.lua
 2. move keybindings lua/user/keybindings.lua
