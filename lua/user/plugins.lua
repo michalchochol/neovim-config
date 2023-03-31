@@ -7,8 +7,25 @@ M.config = function()
     { "theHamsta/nvim-dap-virtual-text" },
     { "nvim-telescope/telescope-dap.nvim" },
     { "vim-test/vim-test" },
+    { "lunarvim/onedarker.nvim" },
     -- {
-    --   "rose-pine/neovim",
+    --   "shaunsingh/solarized.nvim",
+    --   name = "solarized",
+    --   config = function()
+    --     -- require('solarized').set()
+    --     require("user.theme").solarized()
+    --     lvim.colorscheme = "solarized"
+    --     vim.g.solarized_italic_comments = true
+    --     vim.g.solarized_italic_keywords = true
+    --     vim.g.solarized_italic_functions = true
+    --     vim.g.solarized_italic_variables = false
+    --     vim.g.solarized_contrast = true
+    --     vim.g.solarized_borders = false
+    --     vim.g.solarized_disable_background = false
+    --   end
+    -- },
+    -- {
+    -- "rose-pine/neovim",
     --   name = "rose-pine",
     --   config = function()
     --     require("user.theme").rose_pine()
