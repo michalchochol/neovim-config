@@ -1,7 +1,7 @@
 local M = {}
 
 M.config = function()
-  lvim.colorscheme = "onedarker"
+  lvim.colorscheme = "tokyonight"
   lvim.format_on_save.enabled = true
 end
 
